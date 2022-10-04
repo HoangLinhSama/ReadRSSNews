@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> arrayListLink;
     private ArrayList<News> arrayListNews;
     private ArrayList<String> arrayListPicture;
+    private ArrayList<String> arrayListPublishDate;
 
     private void mapping() {
         this.listViewNews = findViewById(R.id.listViewNews);
@@ -41,11 +42,12 @@ public class MainActivity extends AppCompatActivity {
         this.arrayListLink = new ArrayList<String>();
         this.arrayListNews = new ArrayList<News>();
         this.arrayListPicture = new ArrayList<String>();
+        this.arrayListPublishDate = new ArrayList<String>();
     }
 
     private void addElementArrayListNews() {
         for (int i = 0; i < arrayListTitle.size(); i++)
-            this.arrayListNews.add(new News(arrayListTitle.get(i), "Data Description Demo !", arrayListPicture.get(i)));
+            this.arrayListNews.add(new News(arrayListTitle.get(i), arrayListPublishDate.get(i), arrayListPicture.get(i)));
     }
 
     public class ReadRSS extends AsyncTask<String, Void, String> { // class ReadRSS la inner class cua class MainActivity de code de doc va co the truy xuat ca field va method private cua class MainActivity
@@ -81,6 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 Element element = (Element) nodeListItem.item(i); // lay ra mot element trong nodeList (chinh la 1 cai item)
                 arrayListTitle.add(xmldomParser.getValue(element, "title"));// tra ve mot cai trong element (title trong mot cai item) theo name truyen vao va them vao arrayListTitle
                 arrayListLink.add(xmldomParser.getValue(element, "link"));
+                arrayListPublishDate.add(xmldomParser.getValue(element, "pubDate"));
                 String CDATA = nodeListDescription.item(i + 1).getTextContent(); // i+1 de bo di description dau tien khong co du lieu ben trong, getTextContent tra ve noi dung van ban cua node nay va cac phan tu con cua no (lay noi dung cua the CDATA trong description). Do du lieu ben trng CDATA hon hop (khong co the ro rang) va minh can lay chinh xac du lieu gi nen khong the lam theo cach getValue nhu tren duoc
                 Pattern pattern = Pattern.compile("<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>"); // tao mot mau pattern tu bieu thuc chinh quy bang cach compile bieu thuc chinh quy (bieu thuc chinh quy la dang chuan cua mot dang tai nguyen (img src, mail,...)) roi sau do gan vao variable pattern nay, o day la dang cua img src de co the dung mau nay lay duoc img src tu CDATA
                 Matcher matcher = pattern.matcher(CDATA); // tao mot trinh so khop matcher giua dau vao CDATA voi mau pattern nay

@@ -1,11 +1,11 @@
 package com.hoanglinhsama.readrssnews;
 
 public class News {
-    private String title, description, picture;
+    private String title, publishDate, picture;
 
-    public News(String title, String description, String picture) {
+    public News(String title, String publishDate, String picture) {
         this.title = title;
-        this.description = description;
+        this.publishDate = publishDate;
         this.picture = picture;
     }
 
@@ -17,12 +17,12 @@ public class News {
         this.title = title;
     }
 
-    public String getDescription() {
-        return this.description;
+    public String getpublishDate() {
+        return this.publishDate;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setpublishDate(String publishDate) {
+        this.publishDate = publishDate;
     }
 
     public String getPicture() {

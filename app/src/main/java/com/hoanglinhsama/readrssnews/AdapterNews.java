@@ -40,7 +40,7 @@ public class AdapterNews extends BaseAdapter {
 
     private class ViewHolder {
         ImageView imageViewPicture;
-        TextView textViewTitle, textViewDescription;
+        TextView textViewTitle, textViewPublishDate;
     }
 
     @Override
@@ -51,14 +51,14 @@ public class AdapterNews extends BaseAdapter {
             convertView = inflater.inflate(layout, null);
             viewHolder = new ViewHolder();
             viewHolder.textViewTitle = (TextView) convertView.findViewById(R.id.textViewTitle);
-            viewHolder.textViewDescription = (TextView) convertView.findViewById(R.id.textViewDescription);
+            viewHolder.textViewPublishDate = (TextView) convertView.findViewById(R.id.textViewPublishDate);
             viewHolder.imageViewPicture = (ImageView) convertView.findViewById(R.id.imageViewPicture);
             convertView.setTag(viewHolder);
         } else
             viewHolder = (ViewHolder) convertView.getTag();
         News news = listNews.get(position);
         viewHolder.textViewTitle.setText(news.getTitle());
-        viewHolder.textViewDescription.setText(news.getDescription());
+        viewHolder.textViewPublishDate.setText(news.getpublishDate());
         Picasso.with(convertView.getContext()).load(news.getPicture()).into(viewHolder.imageViewPicture); // Picasso de load anh tu mang ve may ao, with() de tao ra 1 instance cua Picasso, load () de bat dau mot yeu cau hinh anh bang cach dung duong dan xac định, into() la noi se chua cai anh duoc load tu tren mang ve
         return convertView;
     }

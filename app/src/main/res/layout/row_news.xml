@@ -6,8 +6,10 @@
 
     <ImageView
         android:id="@+id/imageViewPicture"
-        android:layout_width="211dp"
-        android:layout_height="197dp"
+        android:layout_width="150dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="7dp"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -16,22 +18,25 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
         android:text="@string/textview_title"
         android:textColor="#00FFCC"
-        android:textSize="21sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toEndOf="@+id/imageViewPicture"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewDescription"
+        android:id="@+id/textViewPublishDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:text="@string/textview_description"
+        android:layout_marginTop="30dp"
+        android:text="@string/textview_publish_date"
         android:textColor="#008EFF"
-        android:textSize="15sp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
         app:layout_constraintStart_toEndOf="@+id/imageViewPicture"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
