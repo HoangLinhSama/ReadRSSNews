@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -60,6 +62,8 @@ public class AdapterNews extends BaseAdapter {
         viewHolder.textViewTitle.setText(news.getTitle());
         viewHolder.textViewPublishDate.setText(news.getpublishDate());
         Picasso.with(convertView.getContext()).load(news.getPicture()).into(viewHolder.imageViewPicture); // Picasso de load anh tu mang ve may ao, with() de tao ra 1 instance cua Picasso, load () de bat dau mot yeu cau hinh anh bang cach dung duong dan xac định, into() la noi se chua cai anh duoc load tu tren mang ve
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_scale_list);
+        convertView.startAnimation(animation);
         return convertView;
     }
 }
