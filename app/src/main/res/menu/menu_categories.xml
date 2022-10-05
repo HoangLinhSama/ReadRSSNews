@@ -7,9 +7,6 @@
         android:id="@+id/menuBusiness"
         android:title="@string/title_business" />
     <item
-        android:id="@+id/menuStartup"
-        android:title="@string/title_start_up" />
-    <item
         android:id="@+id/menuEntertainment"
         android:title="@string/title_entertainment" />
     <item

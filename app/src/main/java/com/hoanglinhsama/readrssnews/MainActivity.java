@@ -132,9 +132,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menuBusiness:
                 new ReadRSS().execute("https://vnexpress.net/rss/kinh-doanh.rss");
                 break;
-            case R.id.menuStartup:
-                new ReadRSS().execute("https://vnexpress.net/rss/startup.rss");
-                break;
             case R.id.menuEntertainment:
                 new ReadRSS().execute("https://vnexpress.net/rss/giai-tri.rss");
                 break;
