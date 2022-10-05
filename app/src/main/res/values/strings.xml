@@ -2,4 +2,23 @@
     <string name="app_name">ReadRSS</string>
     <string name="textview_title">Title</string>
     <string name="textview_publish_date">Publish Date</string>
+    <string name="title_world">Thế Giới</string>
+    <string name="title_business">Kinh Doanh</string>
+    <string name="title_start_up">StartUp</string>
+    <string name="title_entertainment">Giải Trí</string>
+    <string name="title_sport">Thể Thao</string>
+    <string name="title_law">Pháp Luật</string>
+    <string name="title_education">Giáo Dục</string>
+    <string name="title_latest_news">Tin Mới Nhất</string>
+    <string name="title_hot_news">Tin Nổi Bật</string>
+    <string name="title_health">Sức Khỏe</string>
+    <string name="title_life">Đời Sống</string>
+    <string name="title_travel">Du Lịch</string>
+    <string name="title_science">Khoa Học</string>
+    <string name="title_digitizing">Số Hóa</string>
+    <string name="title_car">Xe</string>
+    <string name="title_idea">Ý Kiến</string>
+    <string name="title_talk">Tâm Sự</string>
+    <string name="title_see_more">Xem Nhiều</string>
+    <string name="title_laugh">Cười</string>
 </resources>

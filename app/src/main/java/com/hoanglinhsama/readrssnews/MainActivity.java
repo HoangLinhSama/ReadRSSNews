@@ -3,10 +3,13 @@ package com.hoanglinhsama.readrssnews;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.w3c.dom.Document;
@@ -103,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         this.initialization();
         adapterNews = new AdapterNews(MainActivity.this, R.layout.row_news, this.arrayListNews);
         this.listViewNews.setAdapter(adapterNews);
-        new ReadRSS().execute("https://vnexpress.net/rss/so-hoa.rss"); // execute AsyncTask nay la mot Thread rieng voi MainThread (Main Thread co the goi la UI Thread), do do khong phai la no chay xong thi no moi chay tiep tuc dong code duoi no (do code duoi no nam trong MainThread se chay song song voi AsyncTask Thread), duoi no chi nen de code bat event thoi (vi code event chi chay khi ma co event xay ra thoi)
+        //new ReadRSS().execute("https://vnexpress.net/rss/so-hoa.rss"); // execute AsyncTask nay la mot Thread rieng voi MainThread (Main Thread co the goi la UI Thread), do do khong phai la no chay xong thi no moi chay tiep tuc dong code duoi no (do code duoi no nam trong MainThread se chay song song voi AsyncTask Thread), duoi no chi nen de code bat event thoi (vi code event chi chay khi ma co event xay ra thoi)
         this.listViewNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -112,5 +115,76 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_categories, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuWorld:
+                new ReadRSS().execute("https://vnexpress.net/rss/the-gioi.rss");
+                break;
+            case R.id.menuBusiness:
+                new ReadRSS().execute("https://vnexpress.net/rss/kinh-doanh.rss");
+                break;
+            case R.id.menuStartup:
+                new ReadRSS().execute("https://vnexpress.net/rss/startup.rss");
+                break;
+            case R.id.menuEntertainment:
+                new ReadRSS().execute("https://vnexpress.net/rss/giai-tri.rss");
+                break;
+            case R.id.menuSport:
+                new ReadRSS().execute("https://vnexpress.net/rss/the-thao.rss");
+                break;
+            case R.id.menuLaw:
+                new ReadRSS().execute("https://vnexpress.net/rss/phap-luat.rss");
+                break;
+            case R.id.menuEducation:
+                new ReadRSS().execute("https://vnexpress.net/rss/giao-duc.rss");
+                break;
+            case R.id.menuLatestNews:
+                new ReadRSS().execute("https://vnexpress.net/rss/tin-moi-nhat.rss");
+                break;
+            case R.id.menuHotNews:
+                new ReadRSS().execute("https://vnexpress.net/rss/tin-noi-bat.rss");
+                break;
+            case R.id.menuHealth:
+                new ReadRSS().execute("https://vnexpress.net/rss/suc-khoe.rss");
+                break;
+            case R.id.menuLife:
+                new ReadRSS().execute("https://vnexpress.net/rss/gia-dinh.rss");
+                break;
+            case R.id.menuTravel:
+                new ReadRSS().execute("https://vnexpress.net/rss/du-lich.rss");
+                break;
+            case R.id.menuScience:
+                new ReadRSS().execute("https://vnexpress.net/rss/khoa-hoc.rss");
+                break;
+            case R.id.menuDigitizing:
+                new ReadRSS().execute("https://vnexpress.net/rss/so-hoa.rss");
+                break;
+            case R.id.menuCar:
+                new ReadRSS().execute("https://vnexpress.net/rss/oto-xe-may.rss");
+                break;
+            case R.id.menuIdea:
+                new ReadRSS().execute("https://vnexpress.net/rss/y-kien.rss");
+                break;
+            case R.id.menuTalk:
+                new ReadRSS().execute("https://vnexpress.net/rss/tam-su.rss");
+                break;
+            case R.id.menuLaugh:
+                new ReadRSS().execute("https://vnexpress.net/rss/cuoi.rss");
+                break;
+            case R.id.menuSeeMore:
+                new ReadRSS().execute("https://vnexpress.net/rss/tin-xem-nhieu.rss");
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
