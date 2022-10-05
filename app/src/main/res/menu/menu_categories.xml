@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuWorld"
+        android:title="@string/title_world" />
+    <item
+        android:id="@+id/menuBusiness"
+        android:title="@string/title_business" />
+    <item
+        android:id="@+id/menuStartup"
+        android:title="@string/title_start_up" />
+    <item
+        android:id="@+id/menuEntertainment"
+        android:title="@string/title_entertainment" />
+    <item
+        android:id="@+id/menuSport"
+        android:title="@string/title_sport" />
+    <item
+        android:id="@+id/menuLaw"
+        android:title="@string/title_law" />
+    <item
+        android:id="@+id/menuEducation"
+        android:title="@string/title_education" />
+    <item
+        android:id="@+id/menuLatestNews"
+        android:title="@string/title_latest_news" />
+    <item
+        android:id="@+id/menuHotNews"
+        android:title="@string/title_hot_news" />
+    <item
+        android:id="@+id/menuHealth"
+        android:title="@string/title_health" />
+    <item
+        android:id="@+id/menuLife"
+        android:title="@string/title_life" />
+    <item
+        android:id="@+id/menuTravel"
+        android:title="@string/title_travel" />
+    <item
+        android:id="@+id/menuScience"
+        android:title="@string/title_science" />
+    <item
+        android:id="@+id/menuDigitizing"
+        android:title="@string/title_digitizing" />
+    <item
+        android:id="@+id/menuCar"
+        android:title="@string/title_car" />
+    <item
+        android:id="@+id/menuIdea"
+        android:title="@string/title_idea" />
+    <item
+        android:id="@+id/menuTalk"
+        android:title="@string/title_talk" />
+    <item
+        android:id="@+id/menuLaugh"
+        android:title="@string/title_laugh" />
+    <item
+        android:id="@+id/menuSeeMore"
+        android:title="@string/title_see_more" />
+
+</menu>
