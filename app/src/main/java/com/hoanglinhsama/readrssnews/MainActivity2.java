@@ -8,7 +8,7 @@ import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity2 extends AppCompatActivity {
-    private WebView webViewDisplay; // webview de load giao dien HTML
+    private WebView webViewDisplay; // webview de load giao dien HTML)
 
     private void mapping() {
         this.webViewDisplay = findViewById(R.id.webViewDisplay);

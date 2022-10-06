@@ -1,10 +1,10 @@
 package com.hoanglinhsama.readrssnews;
 
-import android.util.Log;
+import android.util.Log; // Kiem tra MockLog de kiem tra khong phai tren may chu android
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element; // Element ke thua tu Node
-import org.w3c.dom.Node;
+import org.w3c.dom.Document; // Document la tai lieu dai dien cho toan bo tai lieu HTML hoac tai lieu XML
+import org.w3c.dom.Element; // Element dai dien cho toan bo element trong document HTML hoac document XML, Elemnet  ke thua tu Node
+import org.w3c.dom.Node; // Node la kieu du lieu chinh cho toan bo DOM document, no dai dien cho 1 node duy nhat trong document tree
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource; // InputSource la mot nguon dau vao duy nhat cho mot thuc the XML
 import org.xml.sax.SAXException;
