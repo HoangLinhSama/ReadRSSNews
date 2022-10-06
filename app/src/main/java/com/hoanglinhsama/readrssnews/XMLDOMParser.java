@@ -21,11 +21,11 @@ public class XMLDOMParser { // class tu viet de doc (sua, xoa) XML truc quan va 
         Document document = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance(); // tao mot DocumentBuilderFactory moi de co the tao ra mot DocumentBuilder
         try {
-            DocumentBuilder db = factory.newDocumentBuilder(); // tao doi tuong documentbuilder de co the lay duoc document tu XML
-            InputSource is = new InputSource(); // tao mot InputSource la nguon dau vao cho mot thuc the XML
-            is.setCharacterStream(new StringReader(xml)); // dat luong character (chua XML document) cho input source nay
+            DocumentBuilder db = factory.newDocumentBuilder(); // tao doi tuong documentbuilder de co the lay duoc document tu XML va chuyen ve dang DOM de de doc
+            InputSource is = new InputSource(); // tao mot InputSource la nguon dau vao duy nhat cho mot thuc the XML (de doc du lieu tu XML document)
+            is.setCharacterStream(new StringReader(xml)); // dat luong character vao cho input source nay (tham so la luong character chua XML document)
             is.setEncoding("UTF-8"); // dat kieu encoding cho character la UTF-8, UTF-8 la loai encoding de dien dat Unicode tren bo nho
-            document = db.parse(is); // tao document (parse de parse noi dung cua source input (dang XML document thanh DOM Document Object)
+            document = db.parse(is); // tao document (parse de parse noi dung cua source input (tu XML document ve DOM de de doc)
         } catch (ParserConfigurationException e) {
             Log.e("Error: ", e.getMessage(), e);
             return null;
@@ -40,8 +40,8 @@ public class XMLDOMParser { // class tu viet de doc (sua, xoa) XML truc quan va 
     }
 
     public String getValue(Element item, String name) {
-        NodeList nodes = item.getElementsByTagName(name); // tra ve mot cai NodeList (nodes) cua tat ca cac element con trong ( Element item ) theo name cua element
-        return this.getTextNodeValue(nodes.item(0)); // tra ve cai node thu 0 cua NodeList
+        NodeList nodes = item.getElementsByTagName(name); // tra ve mot cai NodeList (nodes) cua tat ca cac element con ( Element item ) theo name cua element
+        return this.getTextNodeValue(nodes.item(0)); // tra ve du lieu cua cai node thu 0 cua NodeList
     }
 
     private String getTextNodeValue(Node elem) {
