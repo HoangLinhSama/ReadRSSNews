@@ -116,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
         this.initialization();
         adapterNews = new AdapterNews(MainActivity.this, R.layout.row_news, this.arrayListNews);
         this.listViewNews.setAdapter(adapterNews);
-        //new ReadRSS().execute("https://vnexpress.net/rss/so-hoa.rss"); // execute AsyncTask nay la mot Thread rieng voi MainThread (Main Thread co the goi la UI Thread), do do khong phai la no chay xong thi no moi chay tiep tuc dong code duoi no (do code duoi no nam trong MainThread se chay song song voi AsyncTask Thread), duoi no chi nen de code bat event thoi (vi code event chi chay khi ma co event xay ra thoi)
         this.listViewNews.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
