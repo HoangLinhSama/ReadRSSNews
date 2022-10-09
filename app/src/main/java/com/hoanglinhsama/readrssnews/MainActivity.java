@@ -100,8 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 Matcher matcher = pattern.matcher(CDATA); // tao mot trinh so khop matcher giua dau vao CDATA voi mau pattern nay
                 if (matcher.find()) // neu tim thay trong CDATA mot chuoi con co dang khop voi pattern thi
                     arrayListPicture.add(matcher.group(1)); // cac chuoi con tim duoc trong CDATA se duoc gan vao chung 1 group, group(1) o day chinh la group cua img src, va group(1) chi co 1 phan tu do img src trong CDATA la duy nhat
-                else // truong hop khong tim thay hinh anh do co the co mot so item khong co src img
-                    arrayListPicture.add("");
+                else // truong hop khong tim thay link hinh anh trong item do co the co mot so item khong co src img thi gan bang mot hinh mac dinh theo link cung cap
+                    arrayListPicture.add("https://i0.wp.com/sebuka.com/wp-content/themes/myx/assets/images/no-image/No-Image-Found-400x264.png");
             }
             addElementArrayListNews();
             adapterNews.notifyDataSetChanged();
