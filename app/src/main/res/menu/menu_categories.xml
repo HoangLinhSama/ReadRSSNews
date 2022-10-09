@@ -4,6 +4,9 @@
         android:id="@+id/menuWorld"
         android:title="@string/title_world" />
     <item
+        android:id="@+id/menuNews"
+        android:title="@string/title_news" />
+    <item
         android:id="@+id/menuBusiness"
         android:title="@string/title_business" />
     <item

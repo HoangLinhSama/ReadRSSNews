@@ -61,7 +61,10 @@ public class AdapterNews extends BaseAdapter {
         News news = listNews.get(position);
         viewHolder.textViewTitle.setText(news.getTitle());
         viewHolder.textViewPublishDate.setText(news.getpublishDate());
-        Picasso.with(convertView.getContext()).load(news.getPicture()).into(viewHolder.imageViewPicture); // Picasso de load anh tu mang ve may ao, with() de tao ra 1 instance cua Picasso, load () de bat dau mot yeu cau hinh anh bang cach dung duong dan xac định, into() la noi se chua cai anh duoc load tu tren mang ve
+        if (news.getPicture().isEmpty()) // neu item khong co hinh anh thi de anh mac dinh
+            viewHolder.imageViewPicture.setImageResource(R.drawable.no_image);
+        else // neu nhu item co hinh anh thi moi get item ve duoc
+            Picasso.with(convertView.getContext()).load(news.getPicture()).into(viewHolder.imageViewPicture); // Picasso de load anh tu mang ve may ao, with() de tao ra 1 instance cua Picasso, load () de bat dau mot yeu cau hinh anh bang cach dung duong dan xac định, into() la noi se chua cai anh duoc load tu tren mang ve
         Animation animation = AnimationUtils.loadAnimation(context, R.anim.anim_scale_listview);
         convertView.startAnimation(animation);
         return convertView;

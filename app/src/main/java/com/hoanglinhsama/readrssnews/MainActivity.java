@@ -78,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+
+            /* reset lai cac ArrayList de chua phan tu voi moi link tuong ung */
+            arrayListTitle.clear();
+            arrayListLink.clear();
+            arrayListPublishDate.clear();
+            arrayListPicture.clear();
+            arrayListNews.clear();
+
             XMLDOMParser xmldomParser = new XMLDOMParser(); // tao object moi de xu ly viec doc xml
             Document document = xmldomParser.getDocument(s); // dua noi dung cua RSS (xml) vao Document, vi Document interface dai dien cho toan bo tai lieu XML va HTMl va Document co chua cac element, textnode (ma day chinh la nhung thu can doc de load duoc web ve may)
             NodeList nodeListItem = document.getElementsByTagName("item"); // moi item la mot node, nodeListItem  co the hieu la 1 List (list cac item), cau lenh nay dung de lay 1 element cua document (chinh la NodeList)
@@ -92,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
                 Matcher matcher = pattern.matcher(CDATA); // tao mot trinh so khop matcher giua dau vao CDATA voi mau pattern nay
                 if (matcher.find()) // neu tim thay trong CDATA mot chuoi con co dang khop voi pattern thi
                     arrayListPicture.add(matcher.group(1)); // cac chuoi con tim duoc trong CDATA se duoc gan vao chung 1 group, group(1) o day chinh la group cua img src, va group(1) chi co 1 phan tu do img src trong CDATA la duy nhat
+                else // truong hop khong tim thay hinh anh do co the co mot so item khong co src img
+                    arrayListPicture.add("");
             }
             addElementArrayListNews();
             adapterNews.notifyDataSetChanged();
@@ -128,6 +138,9 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menuWorld:
                 new ReadRSS().execute("https://vnexpress.net/rss/the-gioi.rss");
+                break;
+            case R.id.menuNews:
+                new ReadRSS().execute("https://vnexpress.net/rss/thoi-su.rss");
                 break;
             case R.id.menuBusiness:
                 new ReadRSS().execute("https://vnexpress.net/rss/kinh-doanh.rss");
