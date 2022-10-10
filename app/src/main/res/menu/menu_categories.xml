@@ -22,9 +22,6 @@
         android:id="@+id/menuEducation"
         android:title="@string/title_education" />
     <item
-        android:id="@+id/menuLatestNews"
-        android:title="@string/title_latest_news" />
-    <item
         android:id="@+id/menuHotNews"
         android:title="@string/title_hot_news" />
     <item
@@ -57,5 +54,4 @@
     <item
         android:id="@+id/menuSeeMore"
         android:title="@string/title_see_more" />
-
 </menu>

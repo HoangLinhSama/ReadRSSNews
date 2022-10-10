@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ReadRSS</string>
+    <string name="app_name">Sama Express</string>
     <string name="textview_title">Title</string>
     <string name="textview_publish_date">Publish Date</string>
     <string name="title_world">Thế Giới</string>
@@ -21,4 +21,6 @@
     <string name="title_see_more">Xem Nhiều</string>
     <string name="title_laugh">Cười</string>
     <string name="title_news">Thời Sự</string>
+    <string name="select_vietnamese">VietNamese</string>
+    <string name="select_english">English</string>
 </resources>

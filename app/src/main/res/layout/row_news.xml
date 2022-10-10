@@ -10,7 +10,11 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        android:scaleType="centerInside">
+        android:scaleType="centerInside"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp">
 
     </ImageView>
 
@@ -19,13 +23,17 @@
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:orientation="vertical"
-        android:weightSum="2">
+        android:weightSum="3"
+        android:layout_marginTop="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="7dp">
 
         <TextView
             android:id="@+id/textViewTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:text="@string/textview_title"
             android:textColor="#00FFCC"
             android:textSize="13sp"
@@ -39,7 +47,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/textview_publish_date"
-            android:textColor="#008EFF"
+            android:textColor="#FF0057"
             android:textSize="13sp">
 
         </TextView>

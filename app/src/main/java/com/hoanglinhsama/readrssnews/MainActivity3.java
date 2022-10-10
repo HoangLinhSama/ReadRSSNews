@@ -7,7 +7,7 @@ import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity2 extends AppCompatActivity {
+public class MainActivity3 extends AppCompatActivity {
     private WebView webViewDisplay; // webview de load giao dien HTML)
 
     private void mapping() {
@@ -17,7 +17,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main3);
         this.mapping();
         Intent intent = getIntent();
         webViewDisplay.loadUrl(intent.getStringExtra("link")); // load mot website vao ung dung
