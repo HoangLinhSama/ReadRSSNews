@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 Calendar calendar = Calendar.getInstance();
-                textViewTime.setText(simpleDateFormatTime.format(calendar.getTime())); // time thi thay doi moi giay
+                textViewTime.setText(simpleDateFormatTime.format(calendar.getTime())); // time thi thay doi moi giay nen can cap nhat lai
                 textViewDate.setText(simpleDateFormatDate.format(calendar.getTime())); // date thi it thay doi
             }
 
