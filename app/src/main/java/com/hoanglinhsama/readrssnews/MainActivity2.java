@@ -191,6 +191,9 @@ public class MainActivity2 extends AppCompatActivity {
             case R.id.menuSeeMore:
                 new ReadRSS().execute("https://vnexpress.net/rss/tin-xem-nhieu.rss");
                 break;
+            case R.id.menuLoadLatestNews:
+                new ReadRSS().execute("https://vnexpress.net/rss/tin-moi-nhat.rss");
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

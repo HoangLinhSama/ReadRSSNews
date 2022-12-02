@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menuWorld"
         android:title="@string/title_world" />
@@ -54,4 +55,11 @@
     <item
         android:id="@+id/menuSeeMore"
         android:title="@string/title_see_more" />
+    <item
+        android:id="@+id/menuLoadLatestNews"
+        android:icon="@drawable/load"
+        android:title="@string/title_latest_news"
+        app:showAsAction="always">
+
+    </item>
 </menu>
