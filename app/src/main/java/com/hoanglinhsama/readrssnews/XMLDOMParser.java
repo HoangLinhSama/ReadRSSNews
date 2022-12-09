@@ -58,5 +58,3 @@ public class XMLDOMParser { // class tu viet de doc (sua, xoa) XML truc quan va 
         return ""; // neu null tuc la cai node thu 0 khong co content, do do tra ve mot chuoi rong
     }
 }
-
-
