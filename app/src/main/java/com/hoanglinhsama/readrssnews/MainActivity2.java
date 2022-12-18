@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.w3c.dom.Document;
@@ -35,6 +36,7 @@ public class MainActivity2 extends AppCompatActivity {
     private ArrayList<News> arrayListNews;
     private ArrayList<String> arrayListPicture;
     private ArrayList<String> arrayListPublishDate;
+    private ActionBar actionBarTitle;
 
     private void mapping() {
         this.listViewNews = findViewById(R.id.listViewNews);
@@ -46,6 +48,8 @@ public class MainActivity2 extends AppCompatActivity {
         this.arrayListNews = new ArrayList<News>();
         this.arrayListPicture = new ArrayList<String>();
         this.arrayListPublishDate = new ArrayList<String>();
+        this.actionBarTitle = getSupportActionBar();
+        this.actionBarTitle.setTitle("Tin mới nhất");
     }
 
     private void addElementArrayListNews() {
@@ -139,60 +143,79 @@ public class MainActivity2 extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menuWorld:
                 new ReadRSS().execute("https://vnexpress.net/rss/the-gioi.rss");
+                this.actionBarTitle.setTitle("Thế Giới");
                 break;
             case R.id.menuNews:
                 new ReadRSS().execute("https://vnexpress.net/rss/thoi-su.rss");
+                this.actionBarTitle.setTitle("Thời Sự");
                 break;
             case R.id.menuBusiness:
                 new ReadRSS().execute("https://vnexpress.net/rss/kinh-doanh.rss");
+                this.actionBarTitle.setTitle("Kinh Doanh");
                 break;
             case R.id.menuEntertainment:
                 new ReadRSS().execute("https://vnexpress.net/rss/giai-tri.rss");
+                this.actionBarTitle.setTitle("Giải Trí");
                 break;
             case R.id.menuSport:
                 new ReadRSS().execute("https://vnexpress.net/rss/the-thao.rss");
+                this.actionBarTitle.setTitle("Thể Thao");
                 break;
             case R.id.menuLaw:
                 new ReadRSS().execute("https://vnexpress.net/rss/phap-luat.rss");
+                this.actionBarTitle.setTitle("Pháp Luật");
                 break;
             case R.id.menuEducation:
                 new ReadRSS().execute("https://vnexpress.net/rss/giao-duc.rss");
+                this.actionBarTitle.setTitle("Giáo Dục");
                 break;
             case R.id.menuHotNews:
                 new ReadRSS().execute("https://vnexpress.net/rss/tin-noi-bat.rss");
+                this.actionBarTitle.setTitle("Tin Nổi Bật");
                 break;
             case R.id.menuHealth:
                 new ReadRSS().execute("https://vnexpress.net/rss/suc-khoe.rss");
+                this.actionBarTitle.setTitle("Sức Khỏe");
                 break;
             case R.id.menuLife:
                 new ReadRSS().execute("https://vnexpress.net/rss/gia-dinh.rss");
+                this.actionBarTitle.setTitle("Gia Đình");
                 break;
             case R.id.menuTravel:
                 new ReadRSS().execute("https://vnexpress.net/rss/du-lich.rss");
+                this.actionBarTitle.setTitle("Du Lịch");
                 break;
             case R.id.menuScience:
                 new ReadRSS().execute("https://vnexpress.net/rss/khoa-hoc.rss");
+                this.actionBarTitle.setTitle("Khoa Học");
                 break;
             case R.id.menuDigitizing:
                 new ReadRSS().execute("https://vnexpress.net/rss/so-hoa.rss");
+                this.actionBarTitle.setTitle("Số Hóa");
                 break;
             case R.id.menuCar:
                 new ReadRSS().execute("https://vnexpress.net/rss/oto-xe-may.rss");
+                this.actionBarTitle.setTitle("Xe");
                 break;
             case R.id.menuIdea:
                 new ReadRSS().execute("https://vnexpress.net/rss/y-kien.rss");
+                this.actionBarTitle.setTitle("Ý Kiến");
                 break;
             case R.id.menuTalk:
                 new ReadRSS().execute("https://vnexpress.net/rss/tam-su.rss");
+                this.actionBarTitle.setTitle("Tâm Sự");
                 break;
             case R.id.menuLaugh:
                 new ReadRSS().execute("https://vnexpress.net/rss/cuoi.rss");
+                this.actionBarTitle.setTitle("Cười");
                 break;
             case R.id.menuSeeMore:
                 new ReadRSS().execute("https://vnexpress.net/rss/tin-xem-nhieu.rss");
+                this.actionBarTitle.setTitle("Xem Nhiều");
                 break;
             case R.id.menuLoadLatestNews:
                 new ReadRSS().execute("https://vnexpress.net/rss/tin-moi-nhat.rss");
+                this.actionBarTitle.setTitle("Tin Mới Nhất");
                 break;
         }
         return super.onOptionsItemSelected(item);

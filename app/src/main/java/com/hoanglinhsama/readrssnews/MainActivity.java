@@ -6,6 +6,7 @@ import android.os.CountDownTimer;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
@@ -14,6 +15,7 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBarLoad;
     private TextView textViewTime, textViewDate;
+    private ActionBar actionBarTitle; // ActionBar la mot Primary Toolbar, va co the dung de hien thi icon ung dung, tieu de, cac thanh phan dieu huong
 
     private void mapping() {
         this.progressBarLoad = findViewById(R.id.progressBarLoad);
@@ -21,11 +23,17 @@ public class MainActivity extends AppCompatActivity {
         this.textViewDate = findViewById(R.id.textViewDate);
     }
 
+    private void initialization() {
+        this.actionBarTitle = getSupportActionBar(); // getSupportActionBar dung de tra ve mot cai ActionBar neu co
+        this.actionBarTitle.setTitle("Welcome"); // set title cho actionbar
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.mapping();
+        this.initialization();
         SimpleDateFormat simpleDateFormatTime = new SimpleDateFormat("HH:mm:ss");
         SimpleDateFormat simpleDateFormatDate = new SimpleDateFormat("dd/MM/yyyy");
         CountDownTimer countDownTimerTime = new CountDownTimer(10000, 1000) { // dung countdowntimer de cai dat dong ho dang chay
