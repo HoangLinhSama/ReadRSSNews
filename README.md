@@ -15,7 +15,7 @@ App đọc báo có thể xem các tin  tức mới nhất, ngoài ra có thể 
 ***
 ## CÁC CHỨC NĂNG CHÍNH
 * Đọc tin tức mới nhất
-* Đọc tin tức theo chủ
+* Đọc tin tức theo chủ đề
 ***
 ## GIAO DIỆN
 * Màn hình Welcome
